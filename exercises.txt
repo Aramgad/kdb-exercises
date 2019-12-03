@@ -1,0 +1,65 @@
+1)	Sprawdz wynik poniższej operacji i zastanów się nad rezultatem
+2*2+2
+2)	Sprawdź jak działa operator ? w poniższym przykładzie:
+-5?til 10
+3)	Stwórz n-elementowe listy zlożone z następujących elementów:
+n:1000
+dates: 	daty z pazdziernika
+times: 	dowolny czas w ciągu dnia
+qtys: 	liczba całkowita z przedzialu <100;10000>
+4)	Napisz kod generujacy silnię
+5)	Napisz funkcję generującą ciąg Fibonacciego
+Krok 1: Zdefiniuj listę
+Krok 2: Wez dwa ostatnie element listy
+Krok 3: Polacz liste z suma jej ostatnich elementow
+Krok 4: Stwórz funkcję fb I przetestuj dla następujących list:
+fb[0 1]
+fb[0 1 1]
+Krok 5: Użyj operatora over, aby wykonać funkcję 10 razy
+6)	Masz podaną listę ofert kupna oraz najbliższą sprzedaż. Podaj 
+buys:	2 1 4 3 2
+sell:	8
+Oczekiwany rezultat:
+2 1 4 1 0
+7)	* Wykonaj ćwiczenie 6 zakładając, że mamy kilka kolejnych ofert sprzedaży:
+buys:	  2 1 4 3 5 4
+sells: 2 4 3 2
+Oczekiwany rezultat:
+	  2 0 0 0 0 0
+	  0 1 3 0 0 0
+	  0 0 1 2 0 0
+	  0 0 0 1 1 0
+Przydatne operatory:
+a)	each
+Przykład użycia: 
+q)count (1 2 3; 10 20)
+2
+q)count each (1 2 3; 10 20)
+3 2
+q)deltas each (1 2 3; 10 20)
+1 1 1
+10 10
+b)	\: (each left)
+q)1 2 3 +\: 10 20 30 40
+11 21 31 41
+12 22 32 42
+13 23 33 43
+8)	Stwórz zmienne i utwórz z nich tabelę:
+n:1000
+dates:2019.11.01+ n?31
+times:n?24:00:00.0000
+qtys:100*1+n?100
+ixs:n?3
+syms:`aapl`amzn`googl ixs
+pxs:(1+n?0.03)*172.0 1189.0 1073.0 ixs 
+trades:([]date:dates;time:times;sym:syms;qty:qtys;px:pxs)
+trades:`date`time xasc trades
+9)	Dla każdej waluty oblicz:
+średnia cen
+średnią ilości 
+wartość minimalna I maksymalną ceny
+10)	Stwórz tabele orders i sprawdź co jest wynikiem operacji as of join:
+orders:([]date:3#2019.10.20;sym:`amzn`aapl`googl;time:3#00:05:20:000)
+aj[`sym`date`time;orders;trades]
+aj0[`sym`date`time;orders;trades]
+11)	Znajdz największą różnicę w cenie dla ibm w tabeli trades. Uwaga: oferta kupna powinna poprzedzać ofertę sprzedaży
