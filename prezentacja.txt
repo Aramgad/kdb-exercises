@@ -13,6 +13,10 @@ Funkcje
 	{x*x}10
 	f:{x*y}
 	f[10;2]
+  ****************
+  key `.
+  delete myvar from `.
+  ******************
   
 Listy
 Jak utworzyć?
@@ -30,7 +34,19 @@ Jak używać?
 0 1 2 3 4 % 2
 2#til 5
 2,1 4 7
+************************
+(1;2.2;`cos)
 
+q)30?" "
+"whevkxzmmxgtooltofinsxmzaufyba"
+q)10?`3
+`hjb`lhk`mga`mio`cei`ecc`fko`mkp`mbc`ejc
+
+dates:2019.01.01+ n?31
+times:n?24:00:00.0000
+qtys:100*1+n?100
+
+************************
 
 Funkcje agregujace
 count til 1000000
@@ -40,7 +56,9 @@ max,maxs
 min,mins
 prd,prds
 deltas 10 20 30 40 50
-
+*********************
+Silnia: prds 1 + til 5
+*********************
 Inne operacje
 /over operator
 0 +/ 10 20 30 40 50
@@ -50,12 +68,24 @@ Inne operacje
 4|5
 /min
 10&2
-
+***********************
+Silnia: (*/) 1+til 5
+***********************
 Ciąg Fibonnaciego
 0  1  1  2  3  5  8  13
 0  1 0+1
 0  1  1 1+1
 0  1  1  2 1+2
+************************
+Krok 1: Zdefiniuj listę
+L0:0 1
+Krok 2: Wez dwa ostatnie element listy
+-2#L0
+Krok 3: Polacz liste z suma jej ostatnich elementow
+Krok4:  zamien na funkcje I przetestuj dla 0 1; 0 1 2
+Krok 5: Uzyj operatora over, aby wykonac funkcje 10 razy
+{x,sum -2#x}/[10;0 1]
+*************************
 FIFO Allocation 
 buys:	2 1 4 3 2
 sell:		8
@@ -96,7 +126,9 @@ w wierszach
 0 1 3 0 0 0
 0 0 1 2 0 0
 0 0 0 1 1 0
-
+***********************
+deltas each deltas sums[sells] &\: sums[buys]
+************************
 Tabela
 n:1000
 dates:2019.01.01+ n?31
@@ -119,5 +151,10 @@ wavg I xbar
 5 xbar 0 1 2 3 4 5 10 11 21
 
 select open:first px, close:last px, lo:min px, hi: max px, wpx: qty wavg px,apx:avg px by bkt:60000 xbar time from t where sym=`aapl
+
+
+***************************
+select max px-mins px by date,sym from t
+***************************
 
 
