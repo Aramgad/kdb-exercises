@@ -1,0 +1,123 @@
+
+Dlaczego?
+2*2+2
+
+Typy danych
+
+Zmienne i funkcje
+Operator przypisania
+	a:42
+	b:1+a:20
+Funkcje
+	{[x]x*x}[10]
+	{x*x}10
+	f:{x*y}
+	f[10;2]
+  
+Listy
+Jak utworzyć?
+1 2 3 
+til 10
+10?20
+10?20.0
+4?2012.09m
+10?`apple`ibm`google
+Jak używać?
+1 2 3 + 10
+1 2 3 + 10 20 30 
+1+2*til 10
+1 2 3 = 10 2 3
+0 1 2 3 4 % 2
+2#til 5
+2,1 4 7
+
+
+Funkcje agregujace
+count til 1000000
+sum til 100
+sums til 10
+max,maxs
+min,mins
+prd,prds
+deltas 10 20 30 40 50
+
+Inne operacje
+/over operator
+0 +/ 10 20 30 40 50
+(+/) 10 20 30 40 50
+(+\) 10 20 30 40 50
+/max
+4|5
+/min
+10&2
+
+Ciąg Fibonnaciego
+0  1  1  2  3  5  8  13
+0  1 0+1
+0  1  1 1+1
+0  1  1  2 1+2
+FIFO Allocation 
+buys:	2 1 4 3 2
+sell:		8
+result 	2 1 4 1 0
+sums	
+2  3  7 10 12	
+8  8  8  8  8
+2  3  7  8  8
+
+FIFO Allocation 
+buys:	  2 1 4 3 5 4
+sells: 2 4 3 2
+
+result:
+	  2 0 0 0 0 0
+	  0 1 3 0 0 0
+	  0 0 1 2 0 0
+	  0 0 0 1 1 0
+sums
+2 3 7 10 15 19
+2 6 9 11
+
+sums[sells] &\:sums[buys]
+2 2 2  2  2  2
+2 3 6  6  6  6
+2 3 7  9  9  9
+2 3 7 10 11 11 
+deltas 
+w kolumnach
+2 2 2 2 2 2
+0 1 4 4 4 4
+0 0 1 3 3 3
+0 0 0 1 2 2 
+
+deltas each 
+w wierszach
+2 0 0 0 0 0
+0 1 3 0 0 0
+0 0 1 2 0 0
+0 0 0 1 1 0
+
+Tabela
+n:1000
+dates:2019.01.01+ n?31
+times:n?24:00:00.0000
+qtys:100*1+n?100
+ixs:n?3
+syms:`aapl`amzn`googl ixs
+pxs:(1+n?0.03)*172.0 1189.0 1073.0 ixs 
+trades:([]date:dates;time:times;sym:syms;qty:qtys;px:pxs)
+trades:`date`time xasc trades
+
+q-sql
+select from trades
+select avg px, avg qty by sym from trades
+
+
+wavg I xbar
+4 3 2 1 wavg 10 20 30 40
+
+5 xbar 0 1 2 3 4 5 10 11 21
+
+select open:first px, close:last px, lo:min px, hi: max px, wpx: qty wavg px,apx:avg px by bkt:60000 xbar time from t where sym=`aapl
+
+
